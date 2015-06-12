@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Duss</title>
-    <link href="/4/Public/bootstrap.min.css" rel="stylesheet">
-    <link href="/4/Public/blog.css" rel="stylesheet">
+    <link href="/Duss/Public/bootstrap.min.css" rel="stylesheet">
+    <link href="/Duss/Public/blog.css" rel="stylesheet">
   </head>
 
   <body>
@@ -19,7 +19,12 @@
           <a class="blog-nav-item active" href="#">首页</a>
           <a class="blog-nav-item" href="#">小组</a>
           <a class="blog-nav-item" href="#">图书</a>
-          <a href="/4/index.php/Home/Index/login" class="blog-nav-item right"><?php echo (cookie('username')); ?></a>
+            <?php if(empty($_SESSION['islog'])): ?><a href="<?php echo U('user/login');?>" class="blog-nav-item right">登录</a>
+                <a href="<?php echo U('user/register');?>" class="blog-nav-item right">注册</a>
+                <?php else: ?>
+                <a href='<?php echo U('user/logout');?>' class="blog-nav-item right" >退出</a>
+                <a href='<?php echo U('user/profile');?>?name=<?php echo (session('name')); ?>' class="blog-nav-item right" ><?php echo (session('name')); ?></a><?php endif; ?>
+          </div>
         </nav>
       </div>
     </div>

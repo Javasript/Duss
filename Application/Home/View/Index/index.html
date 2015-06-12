@@ -19,7 +19,14 @@
           <a class="blog-nav-item active" href="#">首页</a>
           <a class="blog-nav-item" href="#">小组</a>
           <a class="blog-nav-item" href="#">图书</a>
-          <a href="__URL__/login" class="blog-nav-item right">{$Think.Cookie.username}</a>
+            <empty name="Think.session.islog">
+                <a href="{:U('user/login')}" class="blog-nav-item right">登录</a>
+                <a href="{:U('user/register')}" class="blog-nav-item right">注册</a>
+                <else/>
+                <a href='{:U('user/logout')}' class="blog-nav-item right" >退出</a>
+                <a href='{:U('user/profile')}?name={$Think.session.name}' class="blog-nav-item right" >{$Think.session.name}</a>
+            </empty>
+          </div>
         </nav>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8">
@@ -8,8 +8,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <title>登录到Duss</title>
-    <link href="__PUBLIC__/bootstrap.min.css" rel="stylesheet">
-    <link href="__PUBLIC__/signin.css" rel="stylesheet">
+    <link href="/Duss/Public/bootstrap.min.css" rel="stylesheet">
+    <link href="/Duss/Public/signin.css" rel="stylesheet">
 
   </head>
 
@@ -17,11 +17,10 @@
 
     <div class="container">
 
-      <form class="form-signin" role="form" method="POST" action="__URL__/log">
+      <form class="form-signin" role="form" method="POST" action="/Duss/index.php/Home/User/dolog">
         <h2 class="form-signin-heading">登录</h2>
         <input type="text" class="form-control" placeholder="用户名" name="username" required autofocus>
         <input type="password" class="form-control" placeholder="密码" name="password" required>
-
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
 
