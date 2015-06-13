@@ -7,62 +7,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Duss</title>
-    <link href="__PUBLIC__/bootstrap.min.css" rel="stylesheet">
-    <link href="__PUBLIC__/blog.css" rel="stylesheet">
-  </head>
+    <link href="__PUBLIC__/css/amazeui.min.css" rel="stylesheet">
+    <style media="screen">
+      .m-pro{
+        display:block;
+        list-style:none;
+      }
+    </style>
 
+  </head>
   <body>
 
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">首页</a>
-          <a class="blog-nav-item" href="#">小组</a>
-          <a class="blog-nav-item" href="#">图书</a>
-            <empty name="Think.session.islog">
-                <a href="{:U('user/login')}" class="blog-nav-item right">登录</a>
-                <a href="{:U('user/register')}" class="blog-nav-item right">注册</a>
-                <else/>
-                <a href='{:U('user/logout')}' class="blog-nav-item right" >退出</a>
-                <a href='{:U('user/profile')}?name={$Think.session.name}' class="blog-nav-item right" >{$Think.session.name}</a>
-            </empty>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-    <div class="container px18">
-      <div class="row">
-        <div class="col-sm-8 blog-main">
-          <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>关于</h4>
-            <p>只为更好的你</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>其它</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
+    <include file="Public/header.html" />
 
     <div class="blog-footer">
       <p>Power by Thinkphp    Style based Bootstrap</p>
     </div>
 
-  </body>
+
+
+
+
+
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/amazeui.min.js"></script>
+    <script charset="utf-8">
+
+    </script>
+</body>
 </html>

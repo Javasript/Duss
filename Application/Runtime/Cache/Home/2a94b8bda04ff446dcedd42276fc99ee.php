@@ -7,60 +7,82 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Duss</title>
-    <link href="/Duss/Public/bootstrap.min.css" rel="stylesheet">
-    <link href="/Duss/Public/blog.css" rel="stylesheet">
-  </head>
+    <link href="/Duss/Public/css/amazeui.min.css" rel="stylesheet">
+    <style media="screen">
+      .m-pro{
+        display:block;
+        list-style:none;
+      }
+    </style>
 
+  </head>
   <body>
 
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">首页</a>
-          <a class="blog-nav-item" href="#">小组</a>
-          <a class="blog-nav-item" href="#">图书</a>
-            <?php if(empty($_SESSION['islog'])): ?><a href="<?php echo U('user/login');?>" class="blog-nav-item right">登录</a>
-                <a href="<?php echo U('user/register');?>" class="blog-nav-item right">注册</a>
-                <?php else: ?>
-                <a href='<?php echo U('user/logout');?>' class="blog-nav-item right" >退出</a>
-                <a href='<?php echo U('user/profile');?>?name=<?php echo (session('name')); ?>' class="blog-nav-item right" ><?php echo (session('name')); ?></a><?php endif; ?>
-          </div>
-        </nav>
+    <header class="am-topbar am-topbar-inverse am-topbar-fixed-top">
+  <div class="am-container">
+    <h1 class="am-topbar-brand">
+      <a href="#" class="am-text">Duss</a>
+    </h1>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+            data-am-collapse="{target: '#doc-topbar-collapse-4'}"><span class="am-sr-only">导航切换</span> <span
+        class="am-icon-bars"></span></button>
+      <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse-4">
+        <ul class="am-nav am-nav-pills am-topbar-nav">
+          <li class="am-active"><a href="#">首页</a></li>
+          <li><a href="#">图书</a></li>
+          <li class="am-dropdown" data-am-dropdown>
+            <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+              小组 <span class="am-icon-caret-down"></span>
+            </a>
+            <ul class="am-dropdown-content">
+              <li><a href="#">带我去月球</a></li>
+              <li><a href="#">还是回地球</a></li>
+              <li class="am-disabled"><a href="#">臣妾做不到</a></li>
+            </ul>
+          </li>
+        </ul>
+
+          <?php if(empty($_SESSION['islog'])): ?><div class="am-topbar-right">
+                <a href="<?php echo U('user/login');?>"><button class="am-btn am-btn-secondary am-btn-sm am-topbar-btn">登录</button></a>
+              </div>
+              <div class="am-topbar-right">
+                <a href="<?php echo U('user/register');?>"><button class="am-btn am-btn-secondary am-btn-sm am-topbar-btn" >注册</button></a>
+              </div>
+              <?php else: ?>
+              <div class="am-topbar-right">
+                <li class="am-dropdown m-pro" data-am-dropdown>
+
+                  <a class="am-dropdown-toggle" data-am-dropdown-toggle href='<?php echo U('user/profile',array('name'=>$username));?>'>
+                  <button class="am-btn am-btn-secondary am-btn-sm am-topbar-btn" ><span class="am-icon-user"><?php echo (session('name')); ?></span><span class="am-icon-caret-down"></span></button>
+                  </a>
+                  <ul class="am-dropdown-content">
+                    <li><a href='<?php echo U('user/logout');?>'><span class="am-icon-sign-in">退出</span></a></li>
+                  </ul>
+                </li>
+              </div><?php endif; ?>
+
+        </div>
       </div>
-    </div>
+      </div>
+  </div>
+  
+</header>
 
-    <div class="container px18">
-      <div class="row">
-        <div class="col-sm-8 blog-main">
-          <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>关于</h4>
-            <p>只为更好的你</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>其它</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
 
     <div class="blog-footer">
       <p>Power by Thinkphp    Style based Bootstrap</p>
     </div>
 
-  </body>
+
+
+
+
+
+    <script src="/Duss/Public/js/jquery.min.js"></script>
+    <script src="/Duss/Public/js/amazeui.min.js"></script>
+    <script charset="utf-8">
+
+    </script>
+</body>
 </html>

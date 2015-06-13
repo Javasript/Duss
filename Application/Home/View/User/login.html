@@ -1,31 +1,56 @@
+
 <!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <title>登录到Duss</title>
-    <link href="__PUBLIC__/bootstrap.min.css" rel="stylesheet">
-    <link href="__PUBLIC__/signin.css" rel="stylesheet">
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>登录到Duss | 只为更好的你</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  </head>
+  <link rel="stylesheet" href="__PUBLIC__/css/amazeui.min.css"/>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 200%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
 
-  <body>
+<div class="header">
+  <div class="am-g">
+    <h1>登录到Duss</h1>
+    <p>只为更好的你</p>
+  </div>
+  <hr />
+</div>
 
-    <div class="container">
-
-      <form class="form-signin" role="form" method="POST" action="__URL__/dolog">
-        <h2 class="form-signin-heading">登录</h2>
-        <input type="text" class="form-control" placeholder="用户名" name="username" required autofocus>
-        <input type="password" class="form-control" placeholder="密码" name="password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-      </form>
-
-    </div> <!-- /container -->
-
-
-  </body>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <form method="post" class="am-form" action="__URL__/dolog">
+      <label for="email">用户名:</label>
+      <input type="text" name="username" id="email" value="" placeholder="用户名·手机·邮箱">
+      <br>
+      <label for="password">密码:</label>
+      <input type="password" name="password" id="password" value="">
+      <br>
+      <div class="am-cf">
+        <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
+      </div>
+    </form>
+    <hr>
+    <p>© 2014 Xteam</p>
+  </div>
+</div>
+</body>
 </html>
